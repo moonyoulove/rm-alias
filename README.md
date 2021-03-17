@@ -6,7 +6,7 @@
 
 把光標移到目標函數的首行，執行命令。插入代碼後會自動選取調用的代碼，可以再拖曳移動位置。
 
-\!\[screenshot\]\(screenshot.png\)
+![screenshot](screenshot.png)
 
 ## Requirements
 
