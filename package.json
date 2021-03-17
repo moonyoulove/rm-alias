@@ -1,0 +1,63 @@
+{
+  "name": "rm-alias",
+  "displayName": "RPGMaker Plugin Quick Alias",
+  "description": "",
+  "version": "0.0.1",
+  "publisher": "moonyoulove",
+  "engines": {
+    "vscode": "^1.54.0"
+  },
+  "categories": [
+    "Snippets"
+  ],
+  "activationEvents": [
+    "onCommand:rm-alias.insert"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "rm-alias.insert",
+        "title": "插入函數別名"
+      }
+    ],
+    "keybindings":[
+      {
+        "when": "editorTextFocus && editorLangId == javascript",
+        "command": "rm-alias.insert",
+        "key": "ctrl+alt+a"
+      }
+    ],
+    "menus": {
+      "editor/context":[
+        {
+          "when": "editorTextFocus && editorLangId == javascript",
+          "command": "rm-alias.insert",
+          "group": "1_modification"
+        }
+      ],
+      "commandPalette":[
+        {
+          "when": "editorTextFocus && editorLangId == javascript",
+          "command": "rm-alias.insert"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "node ./test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/glob": "^7.1.3",
+    "@types/mocha": "^8.0.4",
+    "@types/node": "^12.11.7",
+    "@types/vscode": "^1.54.0",
+    "eslint": "^7.19.0",
+    "glob": "^7.1.6",
+    "mocha": "^8.2.1",
+    "typescript": "^4.1.3",
+    "vscode-test": "^1.5.0"
+  }
+}
