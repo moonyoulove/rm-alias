@@ -9,16 +9,16 @@ function activate(context) {
         const { selection, document } = editor;
         const line = document.lineAt(selection.start);
         const text = document.getText(line.range);
-        const regex = /(\S+\.\S+)[ ]*=[ ]*function\((.*)\)[ ]*{/;
+        const regex = /([ ]*)(\S+\.\S+)[ ]*=[ ]*function\((.*)\)[ ]*{/;
         const found = text.match(regex);
         if (found) {
-            const { 1: func, 2: args } = found;
+            const { 1:space, 2: func, 3: args } = found;
             editor.edit(builder => {
                 const alias = func.replace(/\.prototype\.|\./g, "_");
-                const snippet1 = `const _${alias} = ${func};\n`;
+                const snippet1 = `${space}const _${alias} = ${func};\n`;
                 // @ts-ignore
                 const indent = " ".repeat(editor.options.tabSize);
-                const snippet2 = `\n${indent}_${alias}.call(this${args ? ", " : ""}${args});`
+                const snippet2 = `\n${space}${indent}_${alias}.call(this${args ? ", " : ""}${args});`
                 builder.insert(line.range.start, snippet1);
                 builder.insert(line.range.end, snippet2);
             }).then(() => {
