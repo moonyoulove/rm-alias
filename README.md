@@ -12,4 +12,4 @@
 
 ### 0.0.1
 
-Initial release
+測試版發布
