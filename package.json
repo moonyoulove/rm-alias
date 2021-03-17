@@ -49,6 +49,7 @@
     "pretest": "npm run lint",
     "test": "node ./test/runTest.js"
   },
+  "icon": "https://github.com/moonyoulove/rm-alias/blob/master/icon.png",
   "devDependencies": {
     "@types/glob": "^7.1.3",
     "@types/mocha": "^8.0.4",

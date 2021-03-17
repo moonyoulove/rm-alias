@@ -6,9 +6,7 @@
 
 把光標移到目標函數的首行，執行命令。插入代碼後會自動選取調用的代碼，可以再拖曳移動位置。
 
-\!\[feature X\]\(images/feature-x.png\)
-
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+\!\[screenshot\]\(screenshot.png\)
 
 ## Requirements
 
