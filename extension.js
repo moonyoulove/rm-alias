@@ -9,7 +9,7 @@ function activate(context) {
         const { selection, document } = editor;
         const line = document.lineAt(selection.start);
         const text = document.getText(line.range);
-        const regex = /([ ]*)(\S+\.\S+)[ ]*=[ ]*function\((.*)\)[ ]*{/;
+        const regex = /([ ]*)(\S+\.\S+)[ ]*=[ ]*function[ ]*\((.*)\)[ ]*{/;
         const found = text.match(regex);
         if (found) {
             const { 1:space, 2: func, 3: args } = found;
